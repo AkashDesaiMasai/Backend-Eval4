@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 require('dotenv').config()
-const connection = mongoose.connect(`${process.env.MONGOOSE_URL}`);
+const URL = process.env.MONGOOSE_URL;
+const connection = mongoose.connect(URL);
 if(connection){
     console.log("connected");
 }
