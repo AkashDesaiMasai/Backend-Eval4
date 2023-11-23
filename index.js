@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 require('dotenv').config()
 const PORT = process.env.PORT||8000;
-
+const cors = require("cors")
 const { Authentication } = require("./middlewares");
 
 const { connection } = require("./db");
@@ -13,7 +13,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 app.use(express.json());
-
+app.use(cors({
+  origin : "*"
+}))
 app.post("/signup", async (req, res) => {
   const { name, email, password, gender, country } = req.body;
 
