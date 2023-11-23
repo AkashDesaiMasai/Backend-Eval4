@@ -105,7 +105,7 @@ app.post("/tweets/create", (req, res) => {
       res.json({ error: "Internal server error" });
     });
 });
-
+console.log("hello")
 app.patch("/tweets/:tweetID", async (req, res) => {
   try {
     const tweetId = req.params.tweetID;
